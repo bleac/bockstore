@@ -1,9 +1,9 @@
-package org.book.store.server;
+package org.book.store;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = "org.book.store")
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
