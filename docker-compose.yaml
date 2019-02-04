@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    container_name: server
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: server:latest
+    ports:
+    - 8080:8080
+    depends_on:
+    - db
+  db:
+    container_name: boock_db
+    image: postgres:11.1
+    volumes:
+    - boock_db:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_PASSWORD=1111
+    - POSTGRES_USER=postgres
+    - POSTGRES_DB=postgres
+    - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+    - 5432:5432
+
+volumes:
+  boock_db: {}
