@@ -11,7 +11,7 @@ services:
     depends_on:
     - db
   db:
-    container_name: boock_db
+    container_name: book_db
     image: postgres:11.1
     volumes:
     - boock_db:/var/lib/postgresql/data
@@ -24,4 +24,4 @@ services:
     - 5432:5432
 
 volumes:
-  boock_db: {}
+  book_db: {}
