@@ -14,7 +14,7 @@ services:
     container_name: book_db
     image: postgres:11.1
     volumes:
-    - boock_db:/var/lib/postgresql/data
+    - book_db:/var/lib/postgresql/data
     environment:
     - POSTGRES_PASSWORD=1111
     - POSTGRES_USER=postgres
