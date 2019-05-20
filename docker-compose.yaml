@@ -1,4 +1,4 @@
-version: '3'
+version: '3.7'
 services:
   web:
     container_name: server
@@ -6,15 +6,17 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: server:latest
+    volumes:
+      - workspace:/var/lib/server
     ports:
-    - 8080:8080
+    - 8070-8079:8080
     depends_on:
     - db
   db:
     container_name: book_db
     image: postgres:11.1
     volumes:
-    - book_db:/var/lib/postgresql/data
+    - workspace:/var/lib/postgresql/data
     environment:
     - POSTGRES_PASSWORD=1111
     - POSTGRES_USER=postgres
@@ -24,4 +26,4 @@ services:
     - 5432:5432
 
 volumes:
-  book_db: {}
+  workspace:
