@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     image: server:latest
     volumes:
-      - workspace:/var/lib/server
+    - workspace:/var/lib/server
     ports:
     - 8070-8079:8080
     depends_on:
